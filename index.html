@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <title >password generator</title>
+</head>
+<body>
+    <style>
+        .text {
+            margin-top: 0;
+            padding: 0;
+            top: 0;
+            position: absolute;
+            display: flex;
+            color: red;
+            font-size: 20px;
+            
+        }
+
+        .text > p {
+            margin-left: 5px;
+
+        }
+
+        @media screen and (max-width: 760px) {
+            body {
+        
+            }
+
+            .container {
+                background-color: rgb(48, 48, 48);
+                width: 70%;
+                padding: 2rem;
+
+            }
+
+            .password-display {
+                padding-left: 0;
+                padding-right: 0;
+                width: 300px;
+            }
+
+            .btn {
+                height: 50px;
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+            form input {
+                margin-top: 20px;
+            }
+            
+        }
+    </style>
+
+        <div class="text">
+            <p>&copy;</p>
+            <p id="demo"></p>
+            <p><a href="https://github.com/btcChurchill?">Click here..</a></p>
+        </div>
+    <div class="container">
+        <h1 class="title" >Password Generator</h1>
+        <h3 class="password-display" id="passwordDisplay">Password Display</h3>
+        <form id="passwordGeneratorForm" class="form">
+            <label for="">Number Of Characters</label>
+            <div class="character-amount-container">
+                <input type="range" id="characterAmountRange" min="1" max="50" value="10">
+                <input type="number" class="number-input" name="number" id="characterAmountNumber" min="1" max="50" value="10">
+            </div>
+
+            <label for="includeUppercase">Include Uppercase</label>
+            <input type="checkbox" id="includeUppercase">
+
+            <label for="includeNumbers">Include Numbers</label>
+            <input type="checkbox" id="includeNumbers">
+
+            <label for="includeSymbols">Include Symbols</label>
+            <input type="checkbox" id="includeSymbols">
+
+            <button class="btn" type="submit" id="generatePassword">Generate Password</button>
+            
+        </form>
+    </div>
+
+
+    <script>
+        const d = new Date();
+        let year = d.getFullYear();
+        document.getElementById("demo").innerHTML = year;
+    </script>
+</body>
+</html>
